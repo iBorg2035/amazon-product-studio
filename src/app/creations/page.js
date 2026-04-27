@@ -228,7 +228,7 @@ export default function CreationsPage() {
                 <div className="flex flex-col justify-center space-y-4">
                   <div className="space-y-2">
                     <div className="text-[9px] font-semibold text-muted uppercase tracking-widest flex items-center gap-2">
-                      {selectedImage.urls.length > 1 ? "Headshot Pack" : "Single Portrait"}
+                      {selectedImage.urls.length > 1 ? "Product Pack" : "Single Product Shot"}
                     </div>
                     <p className="text-sm font-medium text-foreground">
                       {selectedImage.category}
@@ -268,7 +268,7 @@ export default function CreationsPage() {
                       if (selectedImage.status !== "completed") return;
                       setDownloading(true);
                       for (let i = 0; i < selectedImage.urls.length; i++) {
-                        await downloadImage(selectedImage.urls[i], `headshot-${selectedImage.category}-${i + 1}.jpg`);
+                        await downloadImage(selectedImage.urls[i], `product-${selectedImage.category}-${i + 1}.jpg`);
                       }
                       setDownloading(false);
                     }}

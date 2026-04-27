@@ -1,5 +1,5 @@
 {
-  "name": "ai-headshot-generator",
+  "name": "amazon-product-studio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -32,5 +32,6 @@
     "eslint-config-next": "16.2.3",
     "prisma": "^7.7.0",
     "tailwindcss": "^4"
-  }
+  },
+  "description": "AI-powered product photography for Amazon sellers"
 }

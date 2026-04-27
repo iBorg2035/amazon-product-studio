@@ -18,9 +18,9 @@ export async function POST(req) {
       return new NextResponse("No file provided", { status: 400 });
     }
 
-    const apiKey = config.ai.headshot.apiKey;
+    const apiKey = process.env.MUAPI_API_KEY;
     if (!apiKey) {
-      return new NextResponse("API Key not configured", { status: 500 });
+      return new NextResponse("MUAPI_API_KEY not configured", { status: 500 });
     }
 
     // Prepare for MuAPI
@@ -30,7 +30,7 @@ export async function POST(req) {
     const response = await fetch("https://api.muapi.ai/api/v1/upload_file", {
       method: "POST",
       headers: {
-        "x-api-key": apiKey,
+        Authorization: `Bearer ${apiKey}`,
       },
       body: muapiFormData,
     });

@@ -6,8 +6,8 @@ import { Navbar } from "@/components/saas/Navbar";
 const font = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AI Headshot Generator - Premium Portraits",
-  description: "Professional AI headshots for LinkedIn, teams, and creators.",
+  title: "Amazon Product Studio — AI Product Photography for Amazon Sellers",
+  description: "Generate professional Amazon listing photos with AI. Upload your product, pick a scene, get stunning product photography in seconds.",
 };
 
 export default function RootLayout({ children }) {
