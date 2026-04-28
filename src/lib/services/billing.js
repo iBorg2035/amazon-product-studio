@@ -1,4 +1,4 @@
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import config from "@/lib/config";
 import { UserService } from "./user";
 
@@ -10,7 +10,7 @@ export const BillingService = {
    * Create a checkout session for credits
    */
   async createCheckoutSession(userId, price, credits) {
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       payment_method_types: ["card"],
       line_items: [
         {
@@ -44,7 +44,7 @@ export const BillingService = {
     let event;
 
     try {
-      event = stripe.webhooks.constructEvent(
+      event = getStripe().webhooks.constructEvent(
         body,
         signature,
         config.stripe.webhookSecret
