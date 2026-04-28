@@ -1,6 +1,6 @@
 // Amazon Product Studio example images
 // These are sample product photography examples across categories
-const productExamples = [
+export const productExamples = [
   {
     url: "https://cdn.muapi.ai/samples/headshot-1.jpg",
     category: "whitebox",
@@ -51,8 +51,6 @@ const productExamples = [
   },
 ];
 
-export default productExamples;
-
 export function formatCredits(credits) {
   return new Intl.NumberFormat().format(credits);
 }
@@ -96,4 +94,13 @@ export function getAspectRatioLabel(ratio) {
     "16:9": "Widescreen (16:9)",
   };
   return map[ratio] || ratio;
+}
+
+export function downloadImage(url, filename) {
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename || 'product-image.png';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }

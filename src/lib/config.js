@@ -25,3 +25,5 @@ export const config = {
     "office-professional", "outdoor-adventure", "cafe-lounge", "minimal-white"
   ],
 };
+
+export default config;
