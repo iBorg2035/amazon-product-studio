@@ -3,8 +3,6 @@
 import { useSession, signIn } from "next-auth/react";
 import { motion } from "framer-motion";
 import { FaCoins, FaCheck } from "react-icons/fa";
-import Navbar from "@/components/saas/Navbar";
-import Footer from "@/components/saas/Footer";
 
 const tiers = [
   {
@@ -80,8 +78,6 @@ export default function PricingPage() {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-      <Navbar />
-
       <section className="bg-gradient-to-br from-[#0a0a0a] via-[#1a1a2e] to-[#16213e] text-white py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -187,8 +183,6 @@ export default function PricingPage() {
           ))}
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
